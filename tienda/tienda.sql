@@ -37,5 +37,14 @@ INSERT INTO producto VALUES(9, 'Portátil Ideapd 320', 444, 2);
 INSERT INTO producto VALUES(10, 'Impresora HP Deskjet 3720', 59.99, 3);
 INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 
+-- 1. Llista el nom de tots els productes que hi ha en la taula producto.
+SELECT `nombre` FROM `producto`;
 
+-- 2. Llista els noms i els preus de tots els productes de la taula producto.
+SELECT `nombre`, `precio` FROM `producto`;
+
+-- 3. Llista totes les columnes de la taula producto.
+SELECT * FROM `producto`;
+
+-- 4. Llista el nom dels productes, el preu en euros i el preu en dòlars estatunidencs (USD).
 
