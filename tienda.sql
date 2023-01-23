@@ -11,7 +11,10 @@ SELECT * FROM `producto`;
 -- AS command is used to rename a column or table with an alias.
 SELECT `nombre`, `precio` AS `EUR`, round(precio * 0.9) AS `USD` FROM `producto`;
 
--- 5. Llista totes les columnes de la taula producto.
+-- 5. Llista el nom dels productes, el preu en euros i el preu en dòlars estatunidencs (USD). 
+-- Utilitza els següents àlies per a les columnes: nom de producto, euros, dòlars.
+SELECT `nombre` AS `nom de producto`, `precio` AS `euros`, round(precio * 0.9) AS `dòlars` FROM `producto`;
+
 
 
 
