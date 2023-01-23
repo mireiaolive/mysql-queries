@@ -47,4 +47,8 @@ SELECT `nombre`, `precio` FROM `producto`;
 SELECT * FROM `producto`;
 
 -- 4. Llista el nom dels productes, el preu en euros i el preu en dòlars estatunidencs (USD).
+-- AS command is used to rename a column or table with an alias.
+SELECT `nombre`, `precio` AS `EUR`, round(precio * 0.9) AS `USD` FROM `producto`;
+
+
 
