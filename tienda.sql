@@ -15,6 +15,8 @@ SELECT `nombre`, `precio` AS `EUR`, round(precio * 0.9) AS `USD` FROM `producto`
 -- Utilitza els següents àlies per a les columnes: nom de producto, euros, dòlars.
 SELECT `nombre` AS `nom de producto`, `precio` AS `euros`, round(precio * 0.9) AS `dòlars` FROM `producto`;
 
+-- 6. Llista els noms i els preus de tots els productes de la taula producto, convertint els noms a majúscula.
+SELECT UPPER(nombre) AS `nombre` , `precio` FROM `producto`;
 
-
+-- 7. Llista els noms i els preus de tots els productes de la taula producto, convertint els noms a minúscula.
 
