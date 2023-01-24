@@ -22,4 +22,9 @@ SELECT UPPER(nombre) AS `nombre` , `precio` FROM `producto`;
 SELECT LOWER(nombre) AS `nombre` , `precio` FROM `producto`;
 
 -- 8. Llista el nom de tots els fabricants en una columna, i en una altra columna obtingui en majúscules els dos primers caràcters del nom del fabricant.
+SELECT `nombre`, SUBSTRING(nombre,1,2) AS `dos` FROM `fabricante`;
+
+-- 9. Llista els noms i els preus de tots els productes de la taula producto, arrodonint el valor del preu.
+SELECT `nombre` , ROUND(precio) AS `precio` FROM `producto`;
+
 
