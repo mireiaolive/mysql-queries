@@ -162,7 +162,11 @@ JOIN producto p
 ON f.codigo = p.codigo_fabricante
 
 -- 35. Retorna un llistat on només apareguin aquells fabricants que no tenen cap producte associat.
-
+SELECT f.codigo, f.nombre AS fabricante, p.nombre AS producto
+FROM fabricante f
+JOIN producto p
+ON f.codigo = p.codigo_fabricante
+WHERE p.nombre = NULL;
 -- 36. Retorna tots els productes del fabricador Lenovo. (Sense utilitzar INNER JOIN).
 
 -- 37. Retorna totes les dades dels productes que tenen el mateix preu que el producte més car del fabricant Lenovo. (Sense usar INNER JOIN).
