@@ -16,25 +16,25 @@ SELECT `nombre`, `precio` AS `EUR`, ROUND(precio * 0.9) AS `USD` FROM `producto`
 SELECT `nombre` AS `nom de producto`, `precio` AS `euros`, round(precio * 0.9) AS `dòlars` FROM `producto`;
 
 -- 6. Llista els noms i els preus de tots els productes de la taula producto, convertint els noms a majúscula.
-SELECT UPPER(nombre) AS `nombre` , `precio` FROM `producto`;
+SELECT UPPER(nombre) AS nombre , precio FROM producto;
 
 -- 7. Llista els noms i els preus de tots els productes de la taula producto, convertint els noms a minúscula.
-SELECT LOWER(nombre) AS `nombre` , `precio` FROM `producto`;
+SELECT LOWER(nombre) AS nombre , precio FROM producto;
 
 -- 8. Llista el nom de tots els fabricants en una columna, i en una altra columna obtingui en majúscules els dos primers caràcters del nom del fabricant.
-SELECT `nombre`, SUBSTRING(nombre,1,2) AS `dos` FROM `fabricante`;
+SELECT nombre, SUBSTRING(nombre,1,2) AS dos FROM fabricante;
 
 -- 9. Llista els noms i els preus de tots els productes de la taula producto, arrodonint el valor del preu.
-SELECT `nombre` , ROUND(precio) AS `precio` FROM `producto`;
+SELECT nombre , ROUND(precio) AS precio FROM producto;
 
 -- 10.Llista els noms i els preus de tots els productes de la taula producto, truncant el valor del preu per a mostrar-lo sense cap xifra decimal.
-SELECT `nombre` , ROUND(precio) AS `precio` FROM `producto`;
+SELECT nombre , ROUND(precio) AS precio FROM producto;
 
 -- 11.Llista el codi dels fabricants que tenen productes en la taula producto.
-SELECT `codigo_fabricante` FROM `producto`;
+SELECT codigo_fabricante FROM producto;
 
 -- 12. Llista el codi dels fabricants que tenen productes en la taula producto, eliminant els codis que apareixen repetits.
-SELECT DISTINCT `codigo_fabricante` FROM `producto`;
+SELECT DISTINCT codigo_fabricante FROM producto;
 
 -- 13. Llista els noms dels fabricants ordenats de manera ascendent.
 SELECT nombre FROM fabricante ORDER BY nombre ASC;
@@ -121,3 +121,10 @@ FROM producto p
 INNER JOIN fabricante f
 ON f.codigo = p.codigo_fabricante
 WHERE f.nombre IN ('Asus', 'Hewlett-Packard', 'Seagate');
+
+-- 30. Retorna un llistat amb el nom i el preu de tots els productes dels fabricants el nom dels quals acabi per la vocal e.
+
+-- 31. Retorna un llistat amb el nom i el preu de tots els productes el nom de fabricant dels quals contingui el caràcter w en el seu nom.
+
+-- 32. Retorna un llistat amb el nom de producte, preu i nom de fabricant, de tots els productes que tinguin un preu major o igual a 180 €. 
+-- Ordena el resultat, en primer lloc, pel preu (en ordre descendent) i, en segon lloc, pel nom (en ordre ascendent).
