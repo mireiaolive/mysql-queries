@@ -27,4 +27,14 @@ SELECT `nombre`, SUBSTRING(nombre,1,2) AS `dos` FROM `fabricante`;
 -- 9. Llista els noms i els preus de tots els productes de la taula producto, arrodonint el valor del preu.
 SELECT `nombre` , ROUND(precio) AS `precio` FROM `producto`;
 
+-- 10.Llista els noms i els preus de tots els productes de la taula producto, truncant el valor del preu per a mostrar-lo sense cap xifra decimal.
+SELECT `nombre` , ROUND(precio) AS `precio` FROM `producto`;
+
+-- 11.Llista el codi dels fabricants que tenen productes en la taula producto.
+SELECT `codigo_fabricante` FROM `producto`;
+
+--12. Llista el codi dels fabricants que tenen productes en la taula producto, eliminant els codis que apareixen repetits.
+SELECT DISTINCT `codigo_fabricante` FROM `producto`;
+
+
 
