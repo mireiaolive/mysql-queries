@@ -42,4 +42,16 @@ SELECT `nombre`FROM `fabricante` ORDER BY `nombre` ASC;
 -- 14. Llista els noms dels fabricants ordenats de manera descendent.
 SELECT `nombre`FROM `fabricante` ORDER BY `nombre` DESC;
 
--- 15.Llista els noms dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
+-- 15. Llista els noms dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
+SELECT `nombre`, ROUND(precio) AS `precio` FROM `producto` ORDER BY `nombre` ASC, `precio` DESC;
+
+-- 16. Retorna una llista amb les 5 primeres files de la taula fabricante.
+SELECT * FROM `fabricante` LIMIT 0, 5;
+
+-- 17. Retorna una llista amb 2 files a partir de la quarta fila de la taula fabricante. 
+-- La quarta fila també s'ha d'incloure en la resposta.
+SELECT * FROM `fabricante` LIMIT 3, 2;
+
+-- 18. Llista el nom i el preu del producte més barat. 
+-- (Utilitza solament les clàusules ORDER BY i LIMIT). NOTA: Aquí no podria usar MIN(preu), necessitaria GROUP BY.
+SELECT `nombre`, `precio` FROM `producto` 
