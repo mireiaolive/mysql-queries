@@ -176,5 +176,15 @@ ON f.codigo = p.codigo_fabricante
 WHERE f.nombre ='Lenovo';
 
 -- 37. Retorna totes les dades dels productes que tenen el mateix preu que el producte més car del fabricant Lenovo. (Sense usar INNER JOIN).
-
+SELECT p.nombre, precio, p.codigo, f.nombre AS fabricante
+FROM producto p
+JOIN fabricante f
+WHERE f.codigo = p.codigo_fabricante
+AND precio = (
+    SELECT precio 
+    FROM producto p, fabricante f 
+    WHERE f.codigo = p.codigo_fabricante
+    AND f.nombre='Lenovo'
+    ORDER BY precio DESC LIMIT 0, 1);
+    
 -- 38. Llista el nom del producte més car del fabricant Lenovo.
