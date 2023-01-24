@@ -107,6 +107,17 @@ WHERE f.nombre='Crucial'
 AND precio > 200;
 
 -- 28. Retorna un llistat amb tots els productes dels fabricants Asus, Hewlett-Packard y Seagate. Sense utilitzar l'operador IN.
-
+SELECT p.nombre AS nombre, f.nombre AS fabricante 
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+WHERE f.nombre='Asus' 
+OR f.nombre='Hewlett-Packard'
+OR f.nombre='Seagate';
 
 -- 29. Retorna un llistat amb tots els productes dels fabricants Asus, Hewlett-Packard y Seagate. Fent servir l'operador IN.
+SELECT p.nombre AS nombre, f.nombre AS fabricante 
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+WHERE f.nombre IN ('Asus', 'Hewlett-Packard', 'Seagate');
