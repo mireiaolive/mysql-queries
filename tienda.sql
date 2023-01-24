@@ -189,8 +189,18 @@ AND precio = (
     );
 
 -- 38. Llista el nom del producte més car del fabricant Lenovo.
+SELECT precio 
+FROM producto p, fabricante f 
+WHERE f.codigo = p.codigo_fabricante
+AND f.nombre='Lenovo'
+ORDER BY precio DESC LIMIT 0, 1;
 
 -- 39. Llista el nom del producte més barat del fabricant Hewlett-Packard.
+SELECT precio 
+FROM producto p, fabricante f 
+WHERE f.codigo = p.codigo_fabricante
+AND f.nombre='Hewlett-Packard'
+ORDER BY precio ASC LIMIT 0, 1;
 
 -- 40. Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricant Lenovo.
 
