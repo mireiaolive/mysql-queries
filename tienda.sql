@@ -147,9 +147,19 @@ ORDER BY precio DESC, f.nombre ASC;
 
 -- 33. Retorna un llistat amb el codi i el nom de fabricant, solament d'aquells fabricants que tenen productes associats en la base de dades.
 -- Retorna un llistat amb el codi i el nom de fabricant, solament d'aquells fabricants que tenen productes associats en la base de dades.
+SELECT p.nombre AS nombre, codigo AS codigo
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+WHERE precio>=180 
+ORDER BY precio DESC, f.nombre ASC;
 
 -- 34. Retorna un llistat de tots els fabricants que existeixen en la base de dades, juntament amb els productes que té cadascun d'ells. 
 -- El llistat haurà de mostrar també aquells fabricants que no tenen productes associats.
+SELECT f.codigo, f.nombre AS fabricante, p.nombre AS producto
+FROM fabricante f
+JOIN producto p
+ON f.codigo = p.codigo_fabricante
 
 -- 35. Retorna un llistat on només apareguin aquells fabricants que no tenen cap producte associat.
 
