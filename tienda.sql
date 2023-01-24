@@ -123,8 +123,18 @@ ON f.codigo = p.codigo_fabricante
 WHERE f.nombre IN ('Asus', 'Hewlett-Packard', 'Seagate');
 
 -- 30. Retorna un llistat amb el nom i el preu de tots els productes dels fabricants el nom dels quals acabi per la vocal e.
+SELECT p.nombre AS nombre, f.nombre AS fabricante 
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+WHERE f.nombre LIKE '%e';
 
 -- 31. Retorna un llistat amb el nom i el preu de tots els productes el nom de fabricant dels quals contingui el caràcter w en el seu nom.
+SELECT p.nombre AS nombre, f.nombre AS fabricante 
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+WHERE f.nombre LIKE '%w%';
 
 -- 32. Retorna un llistat amb el nom de producte, preu i nom de fabricant, de tots els productes que tinguin un preu major o igual a 180 €. 
 -- Ordena el resultat, en primer lloc, pel preu (en ordre descendent) i, en segon lloc, pel nom (en ordre ascendent).
