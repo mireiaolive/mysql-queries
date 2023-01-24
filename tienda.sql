@@ -130,7 +130,7 @@ ON f.codigo = p.codigo_fabricante
 WHERE f.nombre LIKE '%e';
 
 -- 31. Retorna un llistat amb el nom i el preu de tots els productes el nom de fabricant dels quals contingui el caràcter w en el seu nom.
-SELECT p.nombre AS nombre, f.nombre AS fabricante 
+SELECT p.nombre AS nombre, precio AS precio, f.nombre AS fabricante 
 FROM producto p
 INNER JOIN fabricante f
 ON f.codigo = p.codigo_fabricante
@@ -138,3 +138,11 @@ WHERE f.nombre LIKE '%w%';
 
 -- 32. Retorna un llistat amb el nom de producte, preu i nom de fabricant, de tots els productes que tinguin un preu major o igual a 180 €. 
 -- Ordena el resultat, en primer lloc, pel preu (en ordre descendent) i, en segon lloc, pel nom (en ordre ascendent).
+SELECT p.nombre AS nombre, precio AS precio, f.nombre AS fabricante 
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+WHERE precio>=180 
+ORDER BY precio DESC, f.nombre ASC;
+
+-- 33. Retorna un llistat amb el codi i el nom de fabricant, solament d'aquells fabricants que tenen productes associats en la base de dades.
