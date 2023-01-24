@@ -33,8 +33,13 @@ SELECT `nombre` , ROUND(precio) AS `precio` FROM `producto`;
 -- 11.Llista el codi dels fabricants que tenen productes en la taula producto.
 SELECT `codigo_fabricante` FROM `producto`;
 
---12. Llista el codi dels fabricants que tenen productes en la taula producto, eliminant els codis que apareixen repetits.
+-- 12. Llista el codi dels fabricants que tenen productes en la taula producto, eliminant els codis que apareixen repetits.
 SELECT DISTINCT `codigo_fabricante` FROM `producto`;
 
+-- 13. Llista els noms dels fabricants ordenats de manera ascendent.
+SELECT `nombre`FROM `fabricante` ORDER BY `nombre` ASC;
 
+-- 14. Llista els noms dels fabricants ordenats de manera descendent.
+SELECT `nombre`FROM `fabricante` ORDER BY `nombre` DESC;
 
+-- 15.Llista els noms dels productes ordenats, en primer lloc, pel nom de manera ascendent i, en segon lloc, pel preu de manera descendent.
