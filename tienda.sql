@@ -203,5 +203,14 @@ AND f.nombre='Hewlett-Packard'
 ORDER BY precio ASC LIMIT 0, 1;
 
 -- 40. Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricant Lenovo.
+SELECT p.nombre AS producto, precio
+FROM producto p
+WHERE precio >= (
+    SELECT precio 
+    FROM producto p, fabricante f 
+    WHERE f.codigo = p.codigo_fabricante
+    AND f.nombre='Lenovo'
+    ORDER BY precio DESC LIMIT 0, 1
+);
 
 -- 41. Llesta tots els productes del fabricant Asus que tenen un preu superior al preu mitjà de tots els seus productes.
