@@ -84,5 +84,12 @@ INNER JOIN fabricante f
 ON f.codigo = p.codigo_fabricante
 ORDER BY precio ASC LIMIT 0, 1;
 
--- 25. 
+-- 25. Retorna el nom del producte, el seu preu i el nom del seu fabricant, del producte més car.
+SELECT p.nombre AS nombre, precio AS precio, f.nombre AS fabricante 
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+ORDER BY precio DESC LIMIT 0, 1;
+
+-- 26. Retorna una llista de tots els productes del fabricant Lenovo.
 
