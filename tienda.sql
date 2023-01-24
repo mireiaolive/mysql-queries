@@ -77,3 +77,5 @@ INNER JOIN fabricante f
 ON f.codigo = p.codigo_fabricante
 ORDER BY fabricante ASC;
 
+
+
