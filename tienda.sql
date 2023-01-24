@@ -1,19 +1,19 @@
 -- 1. Llista el nom de tots els productes que hi ha en la taula producto.
-SELECT `nombre` FROM `producto`;
+SELECT nombre FROM producto;
 
 -- 2. Llista els noms i els preus de tots els productes de la taula producto.
-SELECT `nombre`, `precio` FROM `producto`;
+SELECT nombre, precio FROM producto;
 
 -- 3. Llista totes les columnes de la taula producto.
-SELECT * FROM `producto`;
+SELECT * FROM producto;
 
 -- 4. Llista el nom dels productes, el preu en euros i el preu en dòlars estatunidencs (USD).
 -- AS command is used to rename a column or table with an alias.
-SELECT `nombre`, `precio` AS `EUR`, ROUND(precio * 0.9) AS `USD` FROM `producto`;
+SELECT nombre, precio AS EUR, ROUND(precio * 0.9) AS USD FROM producto;
 
 -- 5. Llista el nom dels productes, el preu en euros i el preu en dòlars estatunidencs (USD). 
 -- Utilitza els següents àlies per a les columnes: nom de producto, euros, dòlars.
-SELECT `nombre` AS `nom de producto`, `precio` AS `euros`, round(precio * 0.9) AS `dòlars` FROM `producto`;
+SELECT nombre AS nom de producto, precio AS euros, round(precio * 0.9) AS dòlars FROM producto;
 
 -- 6. Llista els noms i els preus de tots els productes de la taula producto, convertint els noms a majúscula.
 SELECT UPPER(nombre) AS nombre , precio FROM producto;
@@ -146,3 +146,15 @@ WHERE precio>=180
 ORDER BY precio DESC, f.nombre ASC;
 
 -- 33. Retorna un llistat amb el codi i el nom de fabricant, solament d'aquells fabricants que tenen productes associats en la base de dades.
+-- Retorna un llistat amb el codi i el nom de fabricant, solament d'aquells fabricants que tenen productes associats en la base de dades.
+
+-- 34. Retorna un llistat de tots els fabricants que existeixen en la base de dades, juntament amb els productes que té cadascun d'ells. 
+-- El llistat haurà de mostrar també aquells fabricants que no tenen productes associats.
+
+-- 35. Retorna un llistat on només apareguin aquells fabricants que no tenen cap producte associat.
+
+-- 36. Retorna tots els productes del fabricador Lenovo. (Sense utilitzar INNER JOIN).
+
+-- 37. Retorna totes les dades dels productes que tenen el mateix preu que el producte més car del fabricant Lenovo. (Sense usar INNER JOIN).
+
+-- 38. Llista el nom del producte més car del fabricant Lenovo.
