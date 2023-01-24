@@ -92,4 +92,13 @@ ON f.codigo = p.codigo_fabricante
 ORDER BY precio DESC LIMIT 0, 1;
 
 -- 26. Retorna una llista de tots els productes del fabricant Lenovo.
+SELECT p.nombre AS nombre, f.nombre AS fabricante 
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+WHERE f.nombre='Lenovo';
+
+-- 27. Retorna una llista de tots els productes del fabricant Crucial que tinguin un preu major que 200 €.
+
+-- 28. Retorna un llistat amb tots els productes dels fabricants Asus, Hewlett-Packard y Seagate. Sense utilitzar l'operador IN.
 
