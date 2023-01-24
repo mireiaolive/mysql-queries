@@ -204,4 +204,4 @@ ORDER BY precio ASC LIMIT 0, 1;
 
 -- 40. Retorna tots els productes de la base de dades que tenen un preu major o igual al producte més car del fabricant Lenovo.
 
--- 41. Llesta tots els productes del fabricant Asus que tenen un preu superior al 
+-- 41. Llesta tots els productes del fabricant Asus que tenen un preu superior al preu mitjà de tots els seus productes.
