@@ -77,5 +77,12 @@ INNER JOIN fabricante f
 ON f.codigo = p.codigo_fabricante
 ORDER BY fabricante ASC;
 
+-- 24. Retorna el nom del producte, el seu preu i el nom del seu fabricant, del producte més barat.
+SELECT p.nombre AS nombre, precio AS precio, f.nombre AS fabricante 
+FROM producto p
+INNER JOIN fabricante f
+ON f.codigo = p.codigo_fabricante
+ORDER BY precio ASC LIMIT 0, 1;
 
+-- 25. 
 
