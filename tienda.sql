@@ -54,4 +54,20 @@ SELECT * FROM `fabricante` LIMIT 3, 2;
 
 -- 18. Llista el nom i el preu del producte més barat. 
 -- (Utilitza solament les clàusules ORDER BY i LIMIT). NOTA: Aquí no podria usar MIN(preu), necessitaria GROUP BY.
-SELECT `nombre`, `precio` FROM `producto` 
+SELECT `nombre`, `precio` FROM `producto` ORDER BY `precio` ASC LIMIT 0, 1;
+
+-- 19. Llista el nom i el preu del producte més car. 
+-- (Utilitza solament les clàusules ORDER BY i LIMIT). NOTA: Aquí no podria usar MAX(preu), necessitaria GROUP BY.
+SELECT `nombre`, `precio` FROM `producto` ORDER BY `precio` DESC LIMIT 0, 1;
+
+-- 20. Llista el nom de tots els productes del fabricant el codi de fabricant del qual és igual a 2.
+SELECT `nombre` FROM `fabricante` WHERE codigo=2;
+
+-- 21. Retorna una llista amb el nom del producte, preu i nom de fabricant de tots els productes de la base de dades.
+SELECT p.nombre AS nombre, precio AS precio, f.nombre AS fabricante 
+FROM producto p
+LEFT JOIN fabricante f
+ON f.codigo = p.codigo_fabricante;
+
+
+
