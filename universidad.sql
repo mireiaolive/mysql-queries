@@ -6,8 +6,13 @@
     ORDER BY p.apellido1 ASC;
     
     -- 2. Esbrina el nom i els dos cognoms dels alumnes que no han donat d'alta el seu número de telèfon en la base de dades.
-    
+    SELECT p.apellido1, p.apellido2, p.nombre, p.telefono 
+    FROM persona p
+    WHERE p.telefono IS NULL
+    ORDER BY p.apellido1 ASC;
+
     -- 3. Retorna el llistat dels alumnes que van néixer en 1999.
+    
     
     -- 4. Retorna el llistat de professors/es que no han donat d'alta el seu número de telèfon en la base de dades i a més el seu NIF acaba en K.
     
