@@ -32,7 +32,14 @@ AND id_grado=7;
 -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. 
 -- El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. 
 -- El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom.
-    
+SELECT  p.apellido1, p.apellido2, p.nombre, d.nombre AS departamento
+FROM persona p
+JOIN profesor prf
+ON prf.id_profesor=p.id
+JOIN departamento d
+ON d.id=prf.id_departamento
+WHERE tipo='profesor';
+
 -- 7. Retorna un llistat amb el nom de les assignatures, any d'inici i any de fi del curs escolar de l'alumne/a amb NIF 26902806M.
     
 -- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015).
