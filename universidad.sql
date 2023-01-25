@@ -12,7 +12,7 @@ WHERE p.telefono IS NULL
 ORDER BY p.apellido1 ASC;
 
 -- 3. Retorna el llistat dels alumnes que van néixer en 1999.
-SELECT p.nombre, p.apellido1, p.apellido2, p.fecha_nacimiento
+SELECT p.nombre, p.apellido1, p.apellido2, p.fecha_nacimiento AS bday
 FROM persona p
 WHERE YEAR(fecha_nacimiento)=1999;
     
