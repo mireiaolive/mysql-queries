@@ -1,5 +1,9 @@
 
-    -- 1. Retorna un llistat amb el primer cognom, segon cognom i el nom de tots els/les alumnes. El llistat haurà d'estar ordenat alfabèticament de menor a major pel primer cognom, segon cognom i nom.
+    -- 1. Retorna un llistat amb el primer cognom, segon cognom i el nom de tots els/les alumnes. 
+    -- El llistat haurà d'estar ordenat alfabèticament de menor a major pel primer cognom, segon cognom i nom.
+    SELECT p.apellido1, p.apellido2, p.nombre 
+    FROM persona p
+    ORDER BY p.apellido1 ASC;
     
     -- 2. Esbrina el nom i els dos cognoms dels alumnes que no han donat d'alta el seu número de telèfon en la base de dades.
     
@@ -9,7 +13,9 @@
     
     -- 5. Retorna el llistat de les assignatures que s'imparteixen en el primer quadrimestre, en el tercer curs del grau que té l'identificador 7.
     
-    -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom.
+    -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. 
+    -- El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. 
+    -- El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom.
     
     -- 7. Retorna un llistat amb el nom de les assignatures, any d'inici i any de fi del curs escolar de l'alumne/a amb NIF 26902806M.
     
