@@ -20,11 +20,15 @@ WHERE YEAR(fecha_nacimiento)=1999;
 SELECT apellido1, nombre, telefono, tipo
 FROM persona 
 WHERE telefono IS NULL
-AND tipo='profesor'
-
+AND tipo='profesor';
 
 -- 5. Retorna el llistat de les assignatures que s'imparteixen en el primer quadrimestre, en el tercer curs del grau que té l'identificador 7.
-    
+SELECT  nombre, cuatrimestre, curso, id_grado
+FROM asignatura 
+WHERE cuatrimestre=1
+AND curso=3
+AND id_grado=7; 
+
 -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. 
 -- El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. 
 -- El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom.
