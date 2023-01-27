@@ -140,4 +140,9 @@ ON pr.id_profesor=a.id_profesor
 AND p.nombre IS NULL;
 
 -- 6. Retorna un llistat amb tots els departaments que no han impartit assignatures en cap curs escolar.
-
+SELECT d.nombre AS departamento, c.anyo_inicio, c.anyo_fin
+FROM departamento d
+LEFT JOIN curso_escolar c
+ON c.id=d.id
+WHERE c.anyo_inicio IS NULL
+AND c.anyo_fin IS NULL;
