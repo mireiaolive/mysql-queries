@@ -92,6 +92,14 @@ AND c.anyo_fin=2019;
 -- El llistat també ha de mostrar aquells professors/es que no tenen cap departament associat. 
 -- El llistat ha de retornar quatre columnes, nom del departament, primer cognom, segon cognom i nom del professor/a. 
 -- El resultat estarà ordenat alfabèticament de menor a major pel nom del departament, cognoms i el nom.
+SELECT d.nombre AS departamento, p.nombre AS profesor, p.apellido1, p.apellido2
+FROM persona p
+LEFT JOIN profesor pr
+ON p.id=pr.id_profesor
+LEFT JOIN departamento d
+ON d.id=pr.id_departamento
+ORDER BY d.nombre, apellido1, apellido2 ASC;
+
 
 -- 2. Retorna un llistat amb els professors/es que no estan associats a un departament.
 
