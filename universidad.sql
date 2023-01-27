@@ -58,9 +58,20 @@ INNER JOIN asignatura a
 ON a.id=al.id_asignatura
 WHERE p.nif='26902806M';
 
+-- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es 
+-- que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015).
+-- departamento d
+-- profesor p
+-- asignatura a
+-- grado g
 
-
-
--- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015).
+SELECT d.nombre AS departamento
+FROM departamento d
+INNER JOIN profesor p
+ON d.id=p.id_departamento
+INNER JOIN asignatura a
+INNER JOIN grado g
+ON g.id=a.id_grado
+WHERE g.nombre='Grado en Ingeniería Informática (Plan 2015)';
     
 -- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019.
