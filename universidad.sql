@@ -73,4 +73,16 @@ INNER JOIN grado g
 ON g.id=a.id_grado
 WHERE g.nombre='Grado en Ingeniería Informática (Plan 2015)';
     
--- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019.
+-- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura 
+-- durant el curs escolar 2018/2019.
+-- alumno_se_matricula_asignatura a
+-- alumno al
+-- curso_escolar c
+SELECT DISTINCT p.nombre AS alumno
+FROM persona p
+INNER JOIN alumno_se_matricula_asignatura a
+ON p.id=a.id_alumno
+INNER JOIN curso_escolar c
+ON c.id=a.id_curso_escolar
+WHERE c.anyo_inicio=2018
+AND c.anyo_fin=2019;
