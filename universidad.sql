@@ -100,8 +100,15 @@ LEFT JOIN departamento d
 ON d.id=pr.id_departamento
 ORDER BY d.nombre, apellido1, apellido2 ASC;
 
-
 -- 2. Retorna un llistat amb els professors/es que no estan associats a un departament.
+SELECT p.nombre AS profesoras, d.nombre AS departamento
+FROM persona p
+LEFT JOIN profesor pr
+ON p.id=pr.id_profesor
+LEFT JOIN departamento d
+ON d.id=pr.id_departamento
+WHERE p.tipo="profesor"
+AND d.nombre IS NULL;
 
 -- 3. Retorna un llistat amb els departaments que no tenen professors/es associats.
 
