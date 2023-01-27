@@ -64,7 +64,7 @@ WHERE p.nif='26902806M';
 -- profesor p
 -- asignatura a
 -- grado g
-SELECT d.nombre AS departamento
+SELECT DISTINCT d.nombre AS departamento
 FROM departamento d
 INNER JOIN profesor p
 ON d.id=p.id_departamento
