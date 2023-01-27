@@ -48,8 +48,6 @@ ORDER BY apellido1 ASC;
 -- alumno_se_matricula_asignatura al
 -- curso_escolar c
 -- tabla asignatura a
-
-
 SELECT a.nombre AS asignatura, anyo_inicio, anyo_fin 
 FROM persona p
 INNER JOIN alumno_se_matricula_asignatura al
