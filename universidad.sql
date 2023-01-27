@@ -39,11 +39,30 @@ ON prf.id_profesor=p.id
 JOIN departamento d
 ON d.id=prf.id_departamento
 WHERE tipo='profesor'
-ORDER BY apellido1 ASC; ;
+ORDER BY apellido1 ASC; 
 
 
--- 7. Retorna un llistat amb el nom de les assignatures, any d'inici i any de fi del curs escolar de l'alumne/a amb NIF 26902806M.
-  
+-- 7. Retorna un llistat amb el nom de les assignatures, 
+-- any d'inici i any de fi del curs escolar de l'alumne/a amb NIF 26902806M.
+-- tabla persona p
+-- alumno_se_matricula_asignatura al
+-- curso_escolar c
+-- tabla asignatura a
+
+
+SELECT a.nombre AS asignatura, anyo_inicio, anyo_fin 
+FROM persona p
+INNER JOIN alumno_se_matricula_asignatura al
+ON p.id=al.id_alumno
+INNER JOIN curso_escolar c
+ON c.id=al.id_curso_escolar
+INNER JOIN asignatura a
+ON a.id=al.id_asignatura
+WHERE p.nif='26902806M';
+
+
+
+
 -- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015).
     
 -- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019.
