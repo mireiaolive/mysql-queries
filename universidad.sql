@@ -172,9 +172,18 @@ GROUP BY departamento
 ORDER BY profesores DESC;
 
 -- 4. Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. 
--- Tingui en compte que poden existir departaments que no tenen professors/es associats. Aquests departaments també han d'aparèixer en el llistat.
+-- Tingui en compte que poden existir departaments que no tenen professors/es associats. 
+-- Aquests departaments també han d'aparèixer en el llistat.
+SELECT d.nombre AS departamento, COUNT(p.id) AS profesores
+FROM persona p
+RIGHT JOIN profesor pr
+ON p.id=pr.id_profesor
+RIGHT JOIN departamento d
+ON d.id=pr.id_departamento
+GROUP BY departamento;
 
--- 5. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun. Tingues en compte que poden existir graus que no tenen assignatures associades. 
+-- 5. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun. 
+-- Tingues en compte que poden existir graus que no tenen assignatures associades. 
 -- Aquests graus també han d'aparèixer en el llistat. El resultat haurà d'estar ordenat de major a menor pel nombre d'assignatures.
 
 -- 6. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun, dels graus que tinguin més de 40 assignatures associades.
