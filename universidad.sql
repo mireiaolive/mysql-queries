@@ -199,7 +199,7 @@ FROM grado g
 LEFT JOIN asignatura a
 ON a.id_grado=g.id
 GROUP BY g.id
-HAVING COUNT(a.id) >= 40;
+HAVING COUNT(a.id) > 40;
 
 
 -- 7. Retorna un llistat que mostri el nom dels graus i la suma del nombre total de crèdits que hi ha per a cada tipus d'assignatura. 
