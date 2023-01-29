@@ -201,7 +201,6 @@ ON a.id_grado=g.id
 GROUP BY g.id
 HAVING COUNT(a.id) > 40;
 
-
 -- 7. Retorna un llistat que mostri el nom dels graus i la suma del nombre total de crèdits que hi ha per a cada tipus d'assignatura. 
 -- El resultat ha de tenir tres columnes: nom del grau, tipus d'assignatura i la suma dels crèdits de totes les assignatures que hi ha d'aquest tipus.
 
@@ -226,4 +225,15 @@ WHERE tipo='alumno'
 ORDER BY fecha_nacimiento DESC LIMIT 1;
 
 -- 12. Retorna un llistat amb els professors/es que tenen un departament associat i que no imparteixen cap assignatura.
+SELECT p.id, p.nombre AS profesor, d.nombre AS departamento, a.nombre AS asignatura
+FROM persona p
+JOIN profesor pr
+ON id_profesor=p.id
+JOIN departamento d
+ON d.id=pr.id_departamento
+JOIN asignatura a
+ON pr.id_profesor=a.id_profesor
+WHERE p.tipo='profesor'
+AND a.id IS NULL;
+
 
