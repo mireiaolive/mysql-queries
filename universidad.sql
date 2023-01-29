@@ -205,8 +205,25 @@ HAVING COUNT(a.id) > 40;
 -- 7. Retorna un llistat que mostri el nom dels graus i la suma del nombre total de crèdits que hi ha per a cada tipus d'assignatura. 
 -- El resultat ha de tenir tres columnes: nom del grau, tipus d'assignatura i la suma dels crèdits de totes les assignatures que hi ha d'aquest tipus.
 
--- 8. Retorna un llistat que mostri quants alumnes s'han matriculat d'alguna assignatura en cadascun dels cursos escolars. El resultat haurà de mostrar dues columnes, una columna amb l'any d'inici del curs escolar i una altra amb el nombre d'alumnes matriculats.
--- 9. Retorna un llistat amb el nombre d'assignatures que imparteix cada professor/a. El llistat ha de tenir en compte aquells professors/es que no imparteixen cap assignatura. El resultat mostrarà cinc columnes: id, nom, primer cognom, segon cognom i nombre d'assignatures. El resultat estarà ordenat de major a menor pel nombre d'assignatures.
+-- 8. Retorna un llistat que mostri quants alumnes s'han matriculat d'alguna assignatura en cadascun dels cursos escolars. 
+-- El resultat haurà de mostrar dues columnes, una columna amb l'any d'inici del curs escolar i una altra amb el nombre d'alumnes matriculats.
+-- 9. Retorna un llistat amb el nombre d'assignatures que imparteix cada professor/a. 
+-- El llistat ha de tenir en compte aquells professors/es que no imparteixen cap assignatura. 
+-- El resultat mostrarà cinc columnes: id, nom, primer cognom, segon cognom i nombre d'assignatures. 
+-- El resultat estarà ordenat de major a menor pel nombre d'assignatures.
+SELECT p.id, p.nombre AS nombre, p.apellido1, p.apellido2, a.nombre AS asignatura
+FROM persona p
+RIGHT JOIN profesor pr
+ON p.id=pr.id_profesor
+RIGHT JOIN asignatura a
+ON pr.id_profesor=a.id_profesor
+WHERE p.tipo="profesor"
+ORDER BY asignatura DESC;
+
 -- 10. Retorna totes les dades de l'alumne/a més jove.
+SELECT * FROM persona 
+WHERE tipo='alumno'
+ORDER BY fecha_nacimiento DESC LIMIT 1;
+
 -- 12. Retorna un llistat amb els professors/es que tenen un departament associat i que no imparteixen cap assignatura.
 
