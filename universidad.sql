@@ -168,7 +168,7 @@ JOIN profesor pr
 ON p.id=pr.id_profesor
 JOIN departamento d
 ON d.id=pr.id_departamento
-GROUP BY d.nombre
+GROUP BY departamento
 ORDER BY profesores DESC;
 
 -- 4. Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. 
