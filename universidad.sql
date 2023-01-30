@@ -23,7 +23,6 @@ SELECT g.nombre AS grado, a.tipo AS asignatura, SUM(a.creditos) AS creditos FROM
 SELECT c.anyo_inicio, COUNT(al.id_alumno) AS matriculats FROM curso_escolar c JOIN alumno_se_matricula_asignatura al ON c.id=al.id_curso_escolar GROUP BY c.anyo_inicio; 
 SELECT p.id, p.nombre AS nombre, p.apellido1, p.apellido2, a.nombre AS asignatura FROM persona p RIGHT JOIN profesor pr ON p.id=pr.id_profesor RIGHT JOIN asignatura a ON pr.id_profesor=a.id_profesor WHERE p.tipo="profesor" ORDER BY asignatura DESC;
 SELECT * FROM persona WHERE tipo='alumno' ORDER BY fecha_nacimiento DESC LIMIT 1;
-SELECT p.id, p.nombre AS profesor, d.nombre AS departamento, a.nombre AS asignatura FROM persona p JOIN profesor pr
-ON id_profesor=p.id JOIN departamento d ON d.id=pr.id_departamento JOIN asignatura a ON pr.id_profesor=a.id_profesor WHERE p.tipo='profesor' AND a.id IS NULL;
+SELECT p.id, p.nombre AS profesor, d.nombre AS departamento, a.nombre AS asignatura FROM persona p JOIN profesor pr ON id_profesor=p.id JOIN departamento d ON d.id=pr.id_departamento JOIN asignatura a ON pr.id_profesor=a.id_profesor WHERE p.tipo='profesor' AND a.id IS NULL;
 
 
